@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Demo</title>
+    <link rel="stylesheet" href="CSS\style.css">
+    <script src="Javascript/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center;">CPU SCHEDILING DEMO</h1>
+    </header>
+    <main>
+        <section id="JobsController">
+            <table>
+                <caption>Jobs Controller</caption>
+                <tbody>
+                    <tr>
+                        <th><label for="ProcessName">Process Name:</label></th>
+                        <td><input type="text" id="ProcessName" placeholder="Process Name"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="ProcessBurstTime">Process Burst Time:</label>
+                        </th>
+                        <td>
+                            <input type="number" id="ProcessBurstTime" placeholder="Process Burst Time">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="ProcessPriority">Process Priority:</label>
+                        </th>
+                        <td>
+                            <input type="number" id="ProcessPriority" placeholder="Process Priority">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="ProcessTimeQuantum">Process Time Quantum:</label>
+                        </th>
+                        <td>
+                            <input type="number" id="ProcessTimeQuantum" placeholder="Process Time Quantum">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="controls">
+                <button type="button" id="AddButton" onclick="addProcess()">Add</button>
+                <button type="button" id="ShowButton" onclick="showGanttCharts()">Show</button>
+                <button type="button" id="ClearButton" onclick="clearEntries()">Clear</button>
+                <button type="button" id="ResetButton" onclick="resetPage()">Reset</button>
+            </div>
+        </section>
+        <section id="JobsTable">
+            <table>
+                <caption>Process List</caption>
+                <thead>
+                    <tr>
+                        <th>Process</th>
+                        <th>Burst Time</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section id="GanttCharts">
+            <div id="FCFS">
+                <p style="font-weight: 900; font-style: italic;">First Come First Serve</p>
+                <p>Average Waiting Time: </p>
+                <!-- <div class="GanttChart">
+                    <span><sup>0</sup></span>
+                    <p style="width: 30px; background-color: blue">P99</p>
+                    <span><sup>21</sup></span>
+                    <p>P2</p>
+                    <span><sup>24</sup></span>
+                    <p>P3</p>
+                    <span><sup>30</sup></span>
+                    <p>P4</p>
+                    <span><sup>32</sup></span>
+                </div> -->
+            </div>
+            <!-- <div id="SJF">
+                <p>Shortest Job First</p>
+                <p>Average Waiting Time: </p>
+            </div> -->
+        </section>
+    </main>
+</body>
+
+</html>
