@@ -24,7 +24,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label for="ProcessBurstTime">Process Burst Time:</label>
+                            <label for="ProcessBurstTime">Burst Time:</label>
                         </th>
                         <td>
                             <input type="number" id="ProcessBurstTime" placeholder="Process Burst Time">
@@ -32,7 +32,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <label for="ProcessPriority">Process Priority:</label>
+                            <label for="ProcessPriority">Priority:</label>
                         </th>
                         <td>
                             <input type="number" id="ProcessPriority" placeholder="Process Priority">
@@ -41,10 +41,10 @@
                     </tr>
                     <tr>
                         <th>
-                            <label for="ProcessTimeQuantum">Process Time Quantum:</label>
+                            <label for="ProcessTimeQuantum">Time Quantum:</label>
                         </th>
                         <td>
-                            <input type="number" id="ProcessTimeQuantum" placeholder="Process Time Quantum">
+                            <input type="text" id="ProcessTimeQuantum" placeholder="Process Time Quantum">
 
                         </td>
                     </tr>
@@ -75,22 +75,19 @@
             <div id="FCFS">
                 <p style="font-weight: 900; font-style: italic;">First Come First Serve</p>
                 <p>Average Waiting Time: </p>
-                <!-- <div class="GanttChart">
-                    <span><sup>0</sup></span>
-                    <p style="width: 30px; background-color: blue">P99</p>
-                    <span><sup>21</sup></span>
-                    <p>P2</p>
-                    <span><sup>24</sup></span>
-                    <p>P3</p>
-                    <span><sup>30</sup></span>
-                    <p>P4</p>
-                    <span><sup>32</sup></span>
-                </div> -->
             </div>
-            <!-- <div id="SJF">
-                <p>Shortest Job First</p>
+            <div id="SJF">
+                <p style="font-weight: 900; font-style: italic;">Shortest Job First</p>
                 <p>Average Waiting Time: </p>
-            </div> -->
+            </div>
+            <div id="RR">
+                <p style="font-weight: 900; font-style: italic;">Round Robin</p>
+                <p>Average Waiting Time: </p>
+            </div>
+            <div id="P">
+                <p style="font-weight: 900; font-style: italic;">Priority</p>
+                <p>Average Waiting Time: </p>
+            </div>
         </section>
     </main>
 </body>
