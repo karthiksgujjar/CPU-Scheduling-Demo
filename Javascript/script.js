@@ -76,6 +76,7 @@ async function fcfsGanttChart() {
     fcfsDiv.appendChild(process);
     fcfsDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
+    fcfsDiv.style.visibility = "visible";
     return Promise.resolve();
 }
 
@@ -121,12 +122,13 @@ async function sjfGanttChart() {
     sjfDiv.appendChild(process);
     sjfDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
+    sjfDiv.style.visibility = "visible";
     return Promise.resolve();
 }
 
 async function rrGanttChart() {
 
-    rr=[];
+    rr = [];
     for (let i = 0; i < pListTable.childElementCount; i++) {
         rr.push(parseInt(pListTable.children[i].children[1].textContent));
     }
@@ -163,6 +165,7 @@ async function rrGanttChart() {
         rrDiv.appendChild(process);
         rrDiv.children[1].textContent += (waitingTime / (pListTable.childElementCount)).toString() + " ms";
 
+        rrDiv.style.visibility = "visible";
         return Promise.resolve();
     }
 }
@@ -212,6 +215,7 @@ async function pGanttChart() {
         pDiv.appendChild(process);
         pDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
+        pDiv.style.visibility = "visible";
         return Promise.resolve();
     }
 }
@@ -234,21 +238,29 @@ async function clearGanttCharts() {
     if (fcfsDiv.contains(fcfsDiv.children[2])) {
         fcfsDiv.removeChild(fcfsDiv.children[2]);
         fcfsDiv.children[1].textContent = "Average Waiting Time: ";
+        fcfsDiv.style.visibility = "hidden";
+
     }
 
     if (sjfDiv.contains(sjfDiv.children[2])) {
         sjfDiv.removeChild(sjfDiv.children[2]);
         sjfDiv.children[1].textContent = "Average Waiting Time: ";
+        sjfDiv.style.visibility = "hidden";
+
     }
 
     if (rrDiv.contains(rrDiv.children[2])) {
         rrDiv.removeChild(rrDiv.children[2]);
         rrDiv.children[1].textContent = "Average Waiting Time: ";
+        rrDiv.style.visibility = "hidden";
+
     }
 
     if (pDiv.contains(pDiv.children[2])) {
         pDiv.removeChild(pDiv.children[2]);
         pDiv.children[1].textContent = "Average Waiting Time: ";
+        pDiv.style.visibility = "hidden";
+
     }
     return Promise.resolve();
 }
