@@ -52,6 +52,7 @@ async function showGanttCharts() {
 
 async function fcfsGanttChart() {
 
+    let waitingTimeDisplay = "(";
     let processTime = 0, randomColor = 0, burstTime = 0, totalTime = 0;
     let process = document.createElement('div');
     process.setAttribute('class', "GanttChart");
@@ -69,12 +70,15 @@ async function fcfsGanttChart() {
             <span><sup>${processTime}</sup></span>
             <p style="width: ${pWidth}px; border-radius: 0.2em; background-color: ${randomColor}">${pListTable.children[tableRow].children[0].textContent}</p>`;
         totalTime += processTime;
+        waitingTimeDisplay += " + " + processTime;
         processTime += burstTime;
     }
+    waitingTimeDisplay = waitingTimeDisplay.replace("+", "");
     process.innerHTML += `
             <span><sup>${processTime}</sup></span>`
     fcfsDiv.appendChild(process);
-    fcfsDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
+    waitingTimeDisplay += " )/" + pListTable.childElementCount + " = ";
+    fcfsDiv.children[1].textContent += waitingTimeDisplay + (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
     fcfsDiv.style.display = "flex";
     return Promise.resolve();
@@ -83,6 +87,7 @@ async function fcfsGanttChart() {
 async function sjfGanttChart() {
 
     let sjfAll = [];
+    let waitingTimeDisplay = "(";
     for (let i = 0; i < pListTable.childElementCount; i++) {
         sjfAll.push(parseInt(pListTable.children[i].children[1].textContent));
     }
@@ -112,15 +117,18 @@ async function sjfGanttChart() {
                         <span><sup>${processTime}</sup></span>
                         <p style="width: ${pWidth}px; border-radius: 0.2em; background-color: ${randomColor}">${pListTable.children[tableRow].children[0].textContent}</p>`;
                 totalTime += processTime;
+                waitingTimeDisplay += " + " + processTime;
                 processTime += burstTime;
             }
         }
         sjf.shift();
     }
+    waitingTimeDisplay = waitingTimeDisplay.replace("+", "");
     process.innerHTML += `
 <span><sup>${processTime}</sup></span>`
     sjfDiv.appendChild(process);
-    sjfDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
+    waitingTimeDisplay += " )/" + pListTable.childElementCount + " = ";
+    sjfDiv.children[1].textContent += waitingTimeDisplay + (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
     sjfDiv.style.display = "flex";
     return Promise.resolve();
@@ -173,6 +181,7 @@ async function rrGanttChart() {
 async function pGanttChart() {
 
     let priAll = [];
+    let waitingTimeDisplay = "(";
     for (let i = 0; i < pListTable.childElementCount; i++) {
         priAll.push(parseInt(pListTable.children[i].children[2].textContent));
     }
@@ -205,15 +214,18 @@ async function pGanttChart() {
                             <span><sup>${processTime}</sup></span>
                             <p style="width: ${pWidth}px; border-radius: 0.2em; background-color: ${randomColor}">${pListTable.children[tableRow].children[0].textContent}</p>`;
                     totalTime += processTime;
+                    waitingTimeDisplay += " + " + processTime;
                     processTime += burstTime;
                 }
             }
             pri.shift();
         }
+        waitingTimeDisplay = waitingTimeDisplay.replace("+", "");
         process.innerHTML += `
     <span><sup>${processTime}</sup></span>`
         pDiv.appendChild(process);
-        pDiv.children[1].textContent += (totalTime / (pListTable.childElementCount)).toString() + " ms";
+        waitingTimeDisplay += " )/" + pListTable.childElementCount + " = ";
+        pDiv.children[1].textContent += waitingTimeDisplay + (totalTime / (pListTable.childElementCount)).toString() + " ms";
 
         pDiv.style.display = "flex";
         return Promise.resolve();
