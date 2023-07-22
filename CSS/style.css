@@ -7,7 +7,10 @@
 
 body {
     height: 100dvh;
-    background-image: radial-gradient(burlywood, lightblue);
+    background-image: radial-gradient(rgb(152, 134, 134), rgb(150, 202, 219));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 main {
