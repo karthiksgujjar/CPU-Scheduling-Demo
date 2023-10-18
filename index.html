@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <h1 style="text-align: center;">CPU SCHEDILING DEMO</h1>
+        <h1 style="text-align: center; margin-top: 1rem;">CPU SCHEDILING DEMO</h1>
     </header>
     <main>
         <section id="JobsController">
@@ -50,6 +50,7 @@
                     </tr>
                 </tbody>
             </table>
+            
             <div id="controls">
                 <button type="button" id="AddButton" onclick="addProcess()">Add</button>
                 <button type="button" id="ShowButton" onclick="showGanttCharts()">Show</button>
@@ -57,10 +58,11 @@
                 <button type="button" id="ResetButton" onclick="resetPage()">Reset</button>
             </div>
         </section>
+
         <section id="JobsTable">
             <table>
-                <caption>Process List</caption>
-                <thead>
+                <caption style="margin-bottom: 0.8em;">Process List</caption>
+                <thead >
                     <tr>
                         <th>Process</th>
                         <th>Burst Time</th>
@@ -71,6 +73,7 @@
                 </tbody>
             </table>
         </section>
+
         <section id="GanttCharts">
             <div id="FCFS">
                 <p style="font-weight: 900; font-style: italic;">First Come First Serve</p>

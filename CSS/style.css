@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     height: 100dvh;
-    background-image: radial-gradient(rgb(152, 134, 134), rgb(150, 202, 219));
+    background-image: linear-gradient(to bottom right, #CCCCCC,#CCCCFF);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -25,7 +25,6 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    align-items: center;
 }
 
 #JobsController>* {
@@ -37,14 +36,15 @@ caption {
     font-style: italic;
 }
 
-#JobsController>table {
-    text-align: right;
+#JobsController tbody{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 #JobsController tr {
     display: inline-flex;
     justify-content: center;
-    align-items: center;
     margin-top: 1em;
 }
 
@@ -71,6 +71,8 @@ input {
 
 input[type=number] {
     appearance: textfield;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 button {
