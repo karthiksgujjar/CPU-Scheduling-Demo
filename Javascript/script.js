@@ -153,7 +153,7 @@ async function rrGanttChart() {
                     randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
                     process.innerHTML += `
                         <span><sup>${processTime}</sup></span>
-                        <p style="width: 30px; border-radius: 0.2em; background-color: ${randomColor}">${pListTable.children[tableRow].children[0].textContent}</p>`;
+                        <p style="width: fit-content; border-radius: 0.2em; background-color: ${randomColor}">${pListTable.children[tableRow].children[0].textContent}</p>`;
 
                     if (rr[tableRow] >= processTimeQuantum) {
                         processTime += processTimeQuantum;
