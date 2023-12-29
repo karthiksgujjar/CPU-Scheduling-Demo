@@ -1,4 +1,4 @@
-# CPU SCHEDULING DEMO
+# CPU SCHEDULING VISUALIZER
 
 This is a side project developed with an intention to help my juniors better understand the differences between various CPU Scheduling Algorithms in one go. The site includes 4 algorithms, they are:
 
