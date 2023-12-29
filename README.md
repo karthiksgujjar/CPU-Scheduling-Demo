@@ -25,4 +25,4 @@ This is a side project developed with an intention to help my juniors better und
 - Time Quantum is only required for Round Robin Scheduling so it stays same for all the input once entered, but can be changed but the current value at the time of clicking **Show** button will be taken into consideration for calculations.
 
 **Click the following link for live website**:
-https://karthiksgujjar.github.io/CPU-Scheduling-Demo/
+https://karthiksgujjar.github.io/CPU-Scheduling-Visualizer/
